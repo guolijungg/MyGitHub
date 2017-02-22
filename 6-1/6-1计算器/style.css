@@ -1,0 +1,104 @@
+*{
+			margin: 0;
+			padding: 0;
+			font-style: normal;
+		}
+		body{
+			width: 100%;
+			height: 100%;
+			background-color: pink;
+		}
+		.box{
+			height: 100%;
+			margin:0 auto;
+			display: flex;
+			flex-direction:column;
+			box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+			border-radius: 5px;
+			position: absolute;
+			
+		}
+		/*正常窗口*/
+		.boxNormal{
+			width: 60%;
+			left: 50%;
+			margin-left: -30%;
+		}
+		/*全屏*/
+		.boxLarge{
+			width: 100%;
+			left: 0;
+		}
+		.box .winTool{
+			width: 100%;
+			height: 3%;
+			background-color: #CCCCCC;
+		}
+		.winTool .close{
+			cursor: pointer;
+			width:20px;
+			height: 20px;
+			background-color: #ff5500;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 18px;
+		}
+		.winTool .resize{
+			background-color: lightgreen;
+		}
+		.box .resultPanel{
+			width: 100%;
+			height: 27%;
+			background-color: #7F7F7F;
+			display: flex;
+			flex-direction: column;
+   		  	justify-content: flex-end;
+   		  	color:#fff;
+   		  	text-align: right;
+		}
+		.resultPanel .express{
+			height: 20%;
+			font-size: 18px;
+		}
+		.resultPanel .res{
+			width: 100%;
+			height: 30%;
+			font-size: 40px;
+			font-weight: 600;
+		}
+		.box .calcPanel{
+			width: 100%;
+			height: 70%;
+			display: flex;
+			flex-direction:column;
+		}
+		.row{
+			width: 100%;
+			height: 16.6%;
+			background-color: #fff;
+			display: flex;
+		}
+		.row span{
+			width: 25%;
+			height: 100%;
+			background-color:#F2F2F2;
+			border: 1px solid #fff;
+			box-sizing:border-box;
+			border-right: 0;
+			display: flex;
+			justify-content:center;
+			align-items:center;
+			color:#3c2a2a;
+			font-size:32px;
+			cursor: default;
+		}
+		.row span:first-child{
+			border-left: 0;
+		}
+		.row .operator{
+			background-color: #F5923E;
+			color: #fff;
+		}
+		.row .zero{
+			width: 50%;
+		}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度一下，你就知道</title>
+    <link rel="shortcut icon" href="images/favicon.ico"/>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <div class="top">
+            <a href="#" class="nav">新闻</a>
+            <a href="#" class="nav">hao123</a>
+            <a href="#" class="nav">地图</a>
+            <a href="#" class="nav">视频</a>
+            <a href="#" class="nav">贴吧</a>
+            <a href="#" class="loginset">登录</a>
+            <a href="#" class="loginset" onmouseover="
+                document.getElementById('setmenu').style.display='block';
+                "  onmouseout="
+                document.getElementById('setmenu').style.display='none';
+            " >设置</a>
+            <a href="#" class="morepd" onmouseover="
+                document.getElementById('productmenu').style.display='block';
+            ">更多产品</a>
+        </div>
+
+        <!--set menu-->
+        <div class="setmenu" id="setmenu" onmouseover="
+                document.getElementById('setmenu').style.display='block';
+            "  onmouseout="
+                document.getElementById('setmenu').style.display='none';
+            ">
+            <div class="setnull"></div>
+            <div class="triangle-a">
+                <em></em>
+                <i></i>
+            </div>
+            <a href="#">搜索设置</a>
+            <a href="#">高级搜索</a>
+            <a href="#">关闭预测</a>
+            <a href="#">搜索历史</a>
+        </div>
+        <div class="productmenu" id="productmenu"  onmouseover="
+             document.getElementById('productmenu').style.display='block';
+        " onmouseout="
+            document.getElementById('productmenu').style.display='none';
+        ">
+            <div class="pd-title">更多产品</div>
+            <div class="pd-container">
+                <div class="pd-scollcontainer">
+                    <div class="pd-scoll">
+                        <a href="#">
+                            <span class="pd-imgitem2"></span>
+                            知道
+                        </a>
+                        <a href="#">
+                            <span class="pd-imgitem3"></span>
+                            音乐
+                        </a>
+                        <a href="#">
+                            <span class="pd-imgitem4"></span>
+                            图片
+                        </a>
+                        <a href="#">
+                            <span class="pd-imgitem5"></span>
+                            文库
+                        </a>
+                        <a href="#">
+                            <span class="pd-imgitem6"></span>
+                            风云榜
+                        </a>
+                        <div class="pd-all">
+                            <a href="#">全部产品>></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="baidu">
+            <img src="images/bd_logo1.png" alt="">
+        </div>
+        <form class="fm" action="/login" method="post">
+            <div class="srdr">
+                <input type="text" name="username" autofocus class="sr">
+                <span></span>
+                <button>百度一下</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- 尾部二维码 -->
+<div class="tail">
+    <div class="code">
+        <div class="code_img"></div>
+        <div class="code_text">
+            <p>手机百度</p>
+            <p>快人一步</p>
+        </div>
+    </div>
+    <div class="code1">
+        <div class="code_img1"></div>
+        <div class="code_text">
+            <p>百度糯米</p>
+            <p>一元大餐</p>
+        </div>
+    </div>
+<!-- 页脚声明 -->
+<div class="statement">
+    <p class="links">
+    <a href="#">把百度设为主页</a>
+    <a href="#">关于百度</a>
+    <a href="#">About Baidu</a>
+    <a href="#">百度推广</a>
+    </p>
+    <p class="use">
+        <span>&copy;2016Baidu</span>
+        <a href="#">使用百度前必读</a>
+        <a href="#">意见反馈</a>
+        <span>京ICP证030173号</span>
+        <span class="icon"></span>
+    </p>
+    <p class="Case">
+        <span class="Badge"></span>
+        <a href="#">京公网安备11000002000001号</a>
+    </p>
+</div>
+</div>
+</body>
+</html>

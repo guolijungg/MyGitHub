@@ -1,0 +1,88 @@
+@color-blue:#00008B;
+@color-green:#008000;
+@color-red:#FF0000;
+@color-hui:#ccc;
+@color-white:#fff;
+/*初始化设定*/
+body,
+p,
+ul,
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/*整体布局*/
+.fl {
+  float: left;
+}
+.box{
+  width:300px;
+  height:600px;
+  border:20px solid @color-green;
+  position: absolute;
+  top:100px;
+  left:500px;
+  background-color: @color-blue;
+  .top{
+    width:100%;height:100px;
+    background-color: @color-red;
+    h3{
+      width:95%;
+      height:80px;
+      margin:0 auto;
+      color:#fff;
+      text-align: center;
+      font-size:55px;
+      padding-top: 30px;
+    }
+  }
+  .one{
+    width:100%;height:70px;
+    background-color: @color-white;
+    border-bottom: 1px solid @color-blue;
+    span{
+      display: inline-block;
+      width:50px;height:100%;
+      font-size: 40px;
+      text-align: center;
+      line-height: 70px;
+      background-color:@color-hui;
+    }
+    ul{
+      width:250px;height:100%;
+      li{
+        float:left;
+        width:20px;height:70px;
+        margin-left: 4px;
+        margin-top: 5px;
+      }
+    }
+  }
+  .five{
+    width:100%;height:70px;
+    background-color: @color-white;
+    span{
+      display: inline-block;
+      width:50px;height:100%;
+      font-size: 40px;
+      text-align: center;
+      line-height: 70px;
+      background-color: @color-hui;
+    }
+    ul{
+      width:250px;height:100%;
+      background-color: @color-white;
+      li{
+        float:left;
+        width:20px;height:70px;
+        margin-left: 4px;
+        margin-top: 5px;
+      }
+    }
+  }
+}

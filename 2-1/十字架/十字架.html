@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>十字架</title>
+        <style>
+        	*{
+        		margin: 0;
+        		padding: 0;
+        	}
+         	.box{
+         		position: relative;
+				width: 300px;
+				height:300px;
+				background-color:pink;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -150px;
+				margin-left: -150px;
+				
+         	}
+         	.w{ position: absolute;
+         		height: 100px;
+         		width: 100px;
+         		background-color: #fff;
+				box-shadow:0px 0px 5px -1px #000;	
+         	}
+         	.left{
+         		
+         		top:100px;
+         		left:0;
+				
+         	}
+         	.right{
+         		
+         		top: 100px;
+         		right: 0;
+         		
+         	}
+         	.top{
+         		
+         		top: 0px;
+         		left: 100px;
+         		
+
+         	}
+         	.center{
+         		
+         		top: 100px;
+         		left: 100px;
+         	
+         	}
+         	.bottom{
+         		
+         		bottom:0;
+         		left: 100px;
+         		
+         	}
+            img{
+                display: inline-block;
+                height: 60px;
+                width: 60px;
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="box">
+    	<div class="w left">
+            <img src="imges/1.png"/>   
+        </div>
+    	<div class="w right">
+             <img src="imges/2.png"/>   
+        </div>
+    	<div class="w top">
+             <img src="imges/3.png"/>   
+               
+        </div>
+    	<div class="w center">
+             <img src="imges/4.png"/>   
+               
+        </div>
+    	<div class="w bottom">
+             <img src="imges/5.png"/>   
+               
+        </div>
+    </div>
+    </body>
+</html>

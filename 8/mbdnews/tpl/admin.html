@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>新闻后台管理系统</title>
+    <!--响应式，约束缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 通知IE采用其支持的最新模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 引入bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .sidebar,.content{
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .content{
+            margin-left: -1px;
+        }
+        .main{
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+        }
+        table th,td{
+            font-size: 12px;
+            text-align: center;
+        }
+        .delUrl,.updateUrl{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<nav class="nav navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+        <!--项目名称，logo,品牌-->
+        <a class="navbar-brand" href="#">新闻管理系统</a>
+    </div>
+    <ul class="nav navbar-nav pull-right visible-lg">
+        <li><a href="">欢迎：admin</a></li>
+        <li><a href="">退出</a></li>
+        <li><a href="">消息
+            <span class="badge">10</span></a></li>
+    </ul>
+</nav>
+<div class="container-fluid">
+    <div class="row main">
+        <!--侧边栏-->
+        <div class="col-lg-2 sidebar">
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="javascript:" id="articleList"><span class="glyphicon glyphicon-plus"></span>文章管理</a></li>
+            </ul>
+        </div>
+        <!--内容区-->
+        <div class="col-lg-10 content">
+            <div class="panel">
+                <div class="panel-heading bg-info">
+                    <a id="add" href="add.html" class="btn btn-primary" style="margin-right: 10px;">添加文章</a>
+                    <!--<form action="#" method="post" role="form" class="form-inline">-->
+                        <!--<input type="text" class="form-control" placeholder="请输入关键字"/>-->
+                        <!--<button class="btn btn-primary form-control">查询</button>-->
+                    <!--</form>-->
+                </div>
+                <table class="table table-hover  table-bordered table-responsive" style="text-align: center;">
+                        <thead>
+                        <tr class="active">
+                            <th>序号</th>
+                            <th>标题</th>
+                            <th>内容</th>
+                            <th>标注</th>
+                            <th>日期</th>
+                            <th>分类</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <!--<tr>-->
+                            <!--<td colspan="9">-->
+                                <!--&lt;!&ndash;分页&ndash;&gt;-->
+                                <!--<ul class="pagination">-->
+                                    <!--<li><a href="#">上一页</a></li>-->
+                                    <!--<li><a href="#">1</a></li>-->
+                                    <!--<li><a href="#">2</a></li>-->
+                                    <!--<li><a href="#">3</a></li>-->
+                                    <!--<li><a href="#">4</a></li>-->
+                                    <!--<li><a href="#">5</a></li>-->
+                                    <!--<li><a href="#">下一页</a></li>-->
+                                <!--</ul>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        </tbody>
+                    </table>
+            </div>
+    </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    listNews();
+    function listNews() {
+        var xhr = window.XMLHttpRequest? new XMLHttpRequest() : new ActiveXObject("Microsoft XMLHttp");
+        var url = "../controller/NewsController.php?do=list";
+        xhr.open("get",url,true);
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState == 4){
+                if(xhr.status == 200){
+                    var data = xhr.responseText;
+                    var jsonArr = data.split("#");
+                    console.log(jsonArr);
+                    var obj = {};
+                    for(var i in jsonArr){
+                        if(i != jsonArr.length -1){
+                            obj = JSON.parse(jsonArr[i]);
+                            var tr = document.createElement("tr");
+                            var updateUrl = "../controller/edit.php?newsId="+ obj['news_id'];
+                            var delUrl = "../controller/NewsController.php?do=del&newsId="+ obj['news_id'];
+                            console.log(updateUrl,delUrl);
+                            tr.innerHTML = "<td>"+obj['news_id']+"</td>" +
+                                "<td>"+obj["news_title"].slice(0,8)+"</td>" +
+                                "<td>"+obj["news_content"].slice(0,8)+"</td>" +
+                                "<td>"+obj["news_mark"]+"</td>" +
+                                "<td>"+obj["post_time"]+"</td>" +
+                                "<td>"+obj["news_classification"]+"</td>"+
+                                "<td><a href="+updateUrl+">修改</a> | <a href="+ delUrl+">删除</a></td>"
+                            ;
+                            var tbody = document.getElementsByTagName("tbody")[0];
+                            tbody.appendChild(tr);
+                        }
+                    }
+                }
+            }
+        }
+        xhr.send(null);
+    }
+
+        function update(){
+            alert(1);
+        }
+
+    //向后台发送删除请求
+    $(function (){
+        $("td .delUrl").on('click',function (){
+            alert(1);
+            var newsId = $(this).data('newsid');
+            var xhr = window.XMLHttpRequest? new XMLHttpRequest() : new ActiveXObject("Microsoft XMLHttp");
+            var url = "../controller/NewsController.php?do=del&newsId="+newsId;
+            xhr.open("get",url,true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        var result = xhr.responseText;
+                        console.log(result);
+                    }
+                }
+            }
+            xhr.send(null);
+            //window.location.href = "admin.html";
+        });
+    });
+
+</script>
+</html>

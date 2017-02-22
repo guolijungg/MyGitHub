@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度新闻</title>
+    <link rel="stylesheet" href="/bdnews/css/reset.css"/>
+    <link rel="stylesheet" href="/bdnews/css/style.css"/>
+</head>
+<body>
+<header>
+    <div class="top">
+        <a href="#" class="bd-icon"></a>
+        <a href="#" class="gr-icon"></a>
+        <a href="#" class="logo"></a>
+        <a href="#" class="gz-icon"></a>
+        <a href="#" class="ss-icon"></a>
+    </div>
+    <div class="nav">
+        <ul class="nav1">
+            <li><a href="#" class="type">精选</a></li>
+            <li>
+                <b></b>
+                <a href="#" class="type">百家</a>
+            </li>
+            <li>
+                <b></b>
+                <a href="#" class="type">本地</a>
+            </li>
+            <li>
+                <b></b>
+                <a href="#" class="type">娱乐</a>
+            </li>
+            <li>
+                <b></b>
+                <a href="#" class="type">社会</a>
+            </li>
+            <li>
+                <b></b>
+                <a href="#" class="type">军事</a>
+            </li>
+        </ul>
+        <ul class="nav2">
+            <li><a href="#" class="type">女人</a></li>
+            <li>
+                <b></b>
+                <a href="#" class="type">搞笑</a>
+            </li>
+            <li class="hlw">
+                <b></b>
+                <a href="#" class="type">互联网</a>
+            </li>
+            <li>
+                <b></b>
+                <a href="#" class="type">科技</a>
+            </li>
+            <li>
+                <b></b>
+                <a href="#" class="type">热点</a>
+            </li>
+        </ul>
+    </div>
+    <div class="news">
+        <div class="news_img">
+            <ul>
+                <li class="cun">
+                    <img src="/bdnews/images/timg.jpg" alt=""/>
+                    <span>法国一运钞车遭袭 黄金被抢</span>
+                </li>
+                <li>
+                    <img src="/bdnews/images/timg%20(1).jpg" alt=""/>
+                    <span>
+                        白娘子赵雅芝机场被迷妹围住
+                    </span>
+                </li>
+                <li>
+                    <img src="/bdnews/images/timg%20(2).jpg" alt=""/>
+                    <span>与大熊猫起名的国宝级动物</span>
+                </li>
+            </ul>
+        </div>
+        <ol>
+            <li class="cur"></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+</header>
+<article>
+    <div class="news1">
+        <div class="news1_text">
+            <span>热点</span>
+        </div>
+        <div class="news1_nav">
+            <ul>
+                <li>2017年节假日放假安排</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="news2">
+            <div class="news2_logo">
+                <img src="/bdnews/images/xi.jpg" alt=""/>
+            </div>
+            <div class="news2_text">
+                <div class="news2_wenben">一"习"话，彰显总书记的家国情怀</div>
+                <div class="news2_redian">
+                    <b class="tip-time">6小时前</b>
+                    <b class="tip-hot">热点</b>
+                </div>
+            </div>
+        </div>
+        <div class="news3">
+            <div class="gg-title">乐视网二股东：我们有如下意见 贾跃亭：您哪位？</div>
+            <div class="gg-img">
+                <img src="/bdnews/images/1.JPEG" alt=""/>
+                <img src="/bdnews/images/2.JPEG" alt=""/>
+                <img src="/bdnews/images/3.JPEG" alt=""/>
+            </div>
+        </div>
+    </div>
+</article>
+</body>
+<script type="text/javascript" src="/bdnews/js/jsjquery-1.11.3.min.js"></script>
+<script src="/bdnews/js/script.js"></script>
+<script>
+
+    listNewsByType("本地");
+    $(".type").each(function () {
+        $(this).on('click',function () {
+            var typeText = $(this).text();
+            listNewsByType(typeText);
+        });
+    });
+
+    function listNewsByType(type){
+        $.ajax({
+            type:'GET',
+            url:'/listNewsByType',
+            data:{"typeText":type},
+            dataType:"json",
+            success:function(data){
+                $(".container").empty();
+                //在回调函数中将后台发过来的数据渲染到页面
+                data.forEach(function(obj,index){
+                    //创建图文列表
+                    console.log(obj);
+                    var listItem =  $('<div>').addClass("news2");
+                    listItem.append($('<div>').addClass("news2_logo")
+                        .append($('<img>').attr("src","../"+obj['thumb_path'].slice(9))));
+                    listItem.append($('<div>').addClass('news2_text').append($('<div>').
+                    addClass('news2_wenben').text(obj['news_title'])).append(
+                        $('<div>').addClass("news_redian").append($('<b style="line-height: 17px;height: 17px;display: inline-block;color: #999;font-size: 13px;margin-right: 5px;font-weight: 400;">').addClass(
+                            'tip-time').text(obj['post_time']).text(obj['post_time']))
+                            .append($('<b style="    line-height: 17px;height: 17px;border: 1px solid #efb9b9;color: #ef3f41;font-size: 13px;font-weight: 400;">').addClass('tip-hot').text(obj['news_classification']))
+                    ));
+                    $(".container").append($("<a>").attr("href","").append(listItem));
+                })
+            }
+        });
+    }
+
+</script>
+</html>

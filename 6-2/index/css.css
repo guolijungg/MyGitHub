@@ -1,0 +1,121 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.top {
+    height: 61px;
+    width:1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+}
+.top .top1{
+	height:60px;
+	width: 180px;
+}
+.top .w a{
+	font-size: 10px;
+	color: #000;
+	text-decoration: none;
+}
+.top .w{
+	height: 61px;
+	width: 100px;
+	line-height: 61px;
+	top:-24px;
+	text-align: center;
+
+}
+.top .m{
+	width: 80px;
+	height: 40px;
+	margin-left: 20px;
+}
+.top6{
+	background-color:red;
+}
+.top7{
+	background-color:pink;
+}
+.top8{
+	background-color:blue;
+}
+.top9{
+	background-color:yellow;
+}
+
+.shuru{
+	display: flex;
+	flex-direction:row;
+
+}
+.shuru{
+	height:55px;
+	width:1000px;
+	margin: 20px auto 0;
+
+}
+.shuru span{
+	display: inline-block;
+	height:45px;
+	width:120px;
+	background:url(index_widthlg.png) -10px -212px no-repeat;
+
+}
+.shuru .shuru1{
+	border: 1px solid #000;
+	height: 50px;
+	width:818px;
+	margin-left: 20px;
+	background-color: #fff;
+}
+.shuru .shuru1 select{
+	border: none;
+}
+.shuru .shuru1 input{
+	border: none;
+	height:49px;
+	width: 627px;
+}
+.shuru .shuru1 button{
+	height: 50px;
+	width: 110px;
+	font-size: 14px;
+	border: none;
+}
+.sousuo{
+	width:765px;
+	height:15px;
+	margin: 0 auto;
+}
+.sousuo span{
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+    background: url(index_widthlg.png) -159px -260px no-repeat;
+}
+.sousuo ul li{
+	list-style: none;
+	display: inline-block;
+	font-size: 10px;
+
+	line-height: 15px;
+	margin-left: 35px;
+}
+.sousuo ul li a{
+	text-decoration: none;
+	color: #c8c8c8;
+}
+.nr1{
+	width: 1200px;
+	height: 200px;
+	margin: 10px auto 0;
+	background-color: pink;
+}
+.nr2{
+	width: 1200px;
+	height:400px;
+	margin: 0 auto;
+	background-color: #875;
+}

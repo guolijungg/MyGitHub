@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算器</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="box boxNormal" id="box">
+		<div class="winTool">
+			<i class="close" id="close" title="点击关闭">×</i>
+			<i class="close resize" id="resize" title="最大化">□</i>
+		</div>
+		<div class="resultPanel">
+			<div class="express" id="express"></div>
+			<div class="res" id="res">0</div>
+		</div>
+		<div class="calcPanel">
+			<div class="row">
+				<span data-number="sin" class="operator">sin</span>
+				<span data-number="cos" class="operator">cos</span>
+				<span data-number="tan" class="operator">tan</span>
+				<span data-number="pow" class="operator">pow</span>
+			</div>
+			<div class="row">
+				<span data-number="CE" id="reset">CE</span>
+				<span data-number="←" id="remove">←</span>
+				<span data-number="%">%</span>
+				<span data-number="÷" class="operator">÷</span>
+			</div>
+			<div class="row">
+				<span data-number="7">7</span>
+				<span data-number="8">8</span>
+				<span data-number="9">9</span>
+				<span data-number="×" class="operator">×</span>
+			</div>
+			<div class="row">
+				<span data-number="4">4</span>
+				<span data-number="5">5</span>
+				<span data-number="6">6</span>
+				<span data-number="-" class="operator">-</span>
+			</div>
+			<div class="row">
+				<span data-number="1" >1</span>
+				<span data-number="2">2</span>
+				<span data-number="3">3</span>
+				<span data-number="+" class="operator">+</span>
+			</div>
+			<div class="row">
+				<!-- <span data-number="±">±</span> -->
+				<span data-number="0" class="zero">0</span>
+				<span data-number=".">.</span>
+				<span data-number="=" class="operator" id="equal">=</span>
+			</div>
+		</div>
+	</div>
+</body>
+<!-- <script src="js/main.js"></script> -->
+<script src="jsj.js"></script>
+</html>

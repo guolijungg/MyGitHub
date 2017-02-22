@@ -1,0 +1,115 @@
+
+body{
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 0px;
+	background-color: #ffffff;
+	background-image: url(../imgs/beijing.gif);
+	color: #000000;
+	margin: 0 auto;
+	border-radius: 10px;
+}
+div .demo1{
+	width: 710px;
+	background-color: #fff;
+	margin-top: 10px;
+	border-radius: 10px 10px 0 0;
+	margin:0 auto;
+
+}
+.demo2 td{
+	border: 1px solid #ccc;
+	}
+th{
+	text-align: left;
+	padding-left: 30px;
+}
+.demo2{
+	border:1px solid #ccc;
+	border-collapse: collapse;
+}
+.demo2 th{
+	border: 1px solid #ccc;
+	}
+div .demo2{
+	width:690px;
+	background-color: #fff;
+	margin-left:300px;
+	margin: 0 auto;
+}
+/* div .demo2 td{
+	border: 1px solid #000; 
+	border-collapse: collapse;
+} */
+/* div .demo3 td{
+	border: 1px solid #000; 
+	border-collapse: collapse;
+} */
+div .demo3{
+	width: 710px;
+	background-color: #fff;
+	margin:0 auto;
+	border-radius:0 0 10px 10px;
+	text-align: center;
+}
+td{
+	font-size: 12px;
+    line-height: 150%;
+    text-decoration: none;
+    color: #333333;
+}
+.head td:nth-child(1){
+	width: 29px;
+	height: 28px;
+	vertical-align: top;
+}
+.head td:nth-child(2){
+	width:220px;
+	height:72px;
+}
+.head td:nth-child(3){
+	width:432px;
+	height:82px;
+	text-align: right;
+	vertical-align:bottom;	
+}
+.head td:nth-child(3) a{
+	
+	text-decoration: none;
+	color: red;
+}
+.head td:nth-child(4){
+	width: 29px;
+	height: 28px;
+	vertical-align: top;
+}
+.head td:nth-child(5){
+	width: 29px;
+	height: 28px;
+}
+/* 内容 */
+body .zhuce{
+	font-size: 18px;
+	font-weight: bold;
+	background-color:#fff;
+	margin:0 auto;
+	width: 710px;
+	text-align: center;
+
+}
+.containe{
+	width: 710px;
+	height: auto;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.centen th:nth-child(1){
+	text-align: center;
+	border-collapse: separate;
+}
+body .btn{
+margin-left: 320px
+}
+.right{
+	text-align: right;
+}

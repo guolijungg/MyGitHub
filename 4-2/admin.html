@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>学生信息管理系统</title>
+    <!--响应式，约束缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 通知IE采用其支持的最新模式 -->
+    <meta http-eqauiv="X-UA-Compatible" content="IE=edge">
+    <!-- 引入bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .sidebar,.content{
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .content{
+            margin-left: -1px;
+        }
+        .main{
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+        }
+        table th,td{
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!-- 导航条 -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">学生后台管理系统</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">首页</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+       <li><a href="#">欢迎您:admin</a></li>
+        <li><a href="#">个人中心</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">退出登录 <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">修改密码</a></li>
+            <li class="divider"></li>
+            <li><a href="#">切换用户</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- /导航条 -->
+<div class="container-fluid">
+    <div class="row main">
+        <!--侧边栏-->
+        <div class="col-lg-2 sidebar">
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="#"><span class="glyphicon glyphicon-plus"></span>班级管理</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-plus"></span>学生管理</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-plus"></span>角色权限</a></li>
+            </ul>
+        </div>
+        <!--内容区-->
+        <div class="col-lg-10 content">
+            <div class="panel">
+                <div class="panel-heading bg-info">
+                    <button class="btn btn-primary pull-right" style="margin-right: 10px;">新增学生</button>
+                    <form action="#" method="post" role="form" class="form-inline">
+                        <input type="text" class="form-control" placeholder="请输入学生姓名"/>
+                        <button class="btn btn-primary form-control">查询</button>
+                    </form>
+                </div>
+                <table class="table table-hover  table-bordered table-responsive" style="text-align: center;">
+                        <thead>
+                        <tr class="active">
+                            <th>学号</th>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>年龄</th>
+                            <th>班级</th>
+                            <th>入学时间</th>
+                            <th>电话</th>
+                            <th>地址</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>20161001</th>
+                            <td>Jack</td>
+                            <td style="color:green;">男</td>
+                            <td>20</td>
+                            <td>计算机201609</td>
+                            <td>2016-9-1</td>
+                            <td>1223432342</td>
+                            <td>中国</td>
+                            <td>【<a href="#">修改</a>】【<a href="#">删除</a>】</td>
+                        </tr>
+                        <tr>
+                            <th>20161001</th>
+                            <td>Rose</td>
+                            <td style="color:red;">女</td>
+                            <td>19</td>
+                            <td>计算机201609</td>
+                            <td>2016-9-1</td>
+                            <td>1223432342</td>
+                            <td>中国</td>
+                            <td>【<a href="#">修改</a>】【<a href="#">删除</a>】</td>
+                        </tr>
+                        <tr>
+                            <th>20161001</th>
+                            <td>David</td>
+                            <td style="color:green;">男</td>
+                            <td>21</td>
+                            <td>计算机201609</td>
+                            <td>2016-9-1</td>
+                            <td>1223432342</td>
+                            <td>中国</td>
+                            <td>【<a href="#">修改</a>】【<a href="#">删除</a>】</td>
+                        </tr>
+                        <tr>
+                            <th>20161001</th>
+                            <td>Hedi</td>
+                            <td style="color:red;">女</td>
+                            <td>21</td>
+                            <td>计算机201609</td>
+                            <td>2016-9-1</td>
+                            <td>1223432342</td>
+                            <td>中国</td>
+                            <td>【<a href="#">修改</a>】【<a href="#">删除</a>】</td>
+                        </tr>
+                        <tr>
+                            <th>20161001</th>
+                            <td>Hedi</td>
+                            <td style="color:red;">女</td>
+                            <td>21</td>
+                            <td>计算机201609</td>
+                            <td>2016-9-1</td>
+                            <td>1223432342</td>
+                            <td>中国</td>
+                            <td>【<a href="#">修改</a>】【<a href="#">删除</a>】</td>
+                        </tr>
+                        <tr>
+                            <th>20161001</th>
+                            <td>Hedi</td>
+                            <td style="color:red;">女</td>
+                            <td>21</td>
+                            <td>计算机201609</td>
+                            <td>2016-9-1</td>
+                            <td>1223432342</td>
+                            <td>中国</td>
+                            <td>【<a href="#">修改</a>】【<a href="#">删除</a>】</td>
+                        </tr>
+                        <tr>
+                            <th>20161001</th>
+                            <td>Hedi</td>
+                            <td style="color:red;">女</td>
+                            <td>21</td>
+                            <td>计算机201609</td>
+                            <td>2016-9-1</td>
+                            <td>1223432342</td>
+                            <td>中国</td>
+                            <td>【<a href="#">修改</a>】【<a href="#">删除</a>】</td>
+                        </tr>
+                        <tr>
+                            <th>20161001</th>
+                            <td>Hedi</td>
+                            <td style="color:red;">女</td>
+                            <td>21</td>
+                            <td>计算机201609</td>
+                            <td>2016-9-1</td>
+                            <td>1223432342</td>
+                            <td>中国</td>
+                            <td>【<a href="#">修改</a>】【<a href="#">删除</a>】</td>
+                        </tr>
+                        <tr>
+                            <th>20161001</th>
+                            <td>Hedi</td>
+                            <td style="color:red;">女</td>
+                            <td>21</td>
+                            <td>计算机201609</td>
+                            <td>2016-9-1</td>
+                            <td>1223432342</td>
+                            <td>中国</td>
+                            <td>【<a href="#">修改</a>】【<a href="#">删除</a>】</td>
+                        </tr>
+                        <tr>
+                            <th>20161001</th>
+                            <td>Hedi</td>
+                            <td style="color:red;">女</td>
+                            <td>21</td>
+                            <td>计算机201609</td>
+                            <td>2016-9-1</td>
+                            <td>1223432342</td>
+                            <td>中国</td>
+                            <td>【<a href="#">修改</a>】【<a href="#">删除</a>】</td>
+                        </tr>
+                        <tr>
+                            <td colspan="9">
+                                <!--分页-->
+                                <ul class="pagination">
+                                    <li><a href="#">上一页</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">下一页</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+            </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>
